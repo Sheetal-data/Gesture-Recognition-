@@ -23,6 +23,8 @@ Each gesture is recorded as a video sequence of 30 frames (images), which are st
 	• CNN extracts spatial features from frames.
 	• LSTM learns temporal patterns over the 30-frame sequence.
 	• Works well with moderate amounts of training data.
+
+ 
 2️⃣ 3D CNN Model
 ✅ Best if:
 	• You have a large dataset (hundreds or thousands of videos).
@@ -32,6 +34,8 @@ Each gesture is recorded as a video sequence of 30 frames (images), which are st
 	• 3D CNN processes an entire video as a single unit.
 	• More efficient than CNN+LSTM for larger datasets.
 	• Requires more training data to generalize well.
+
+ 
 3️⃣ Pretrained CNN + LSTM
 ✅ Best if:
 	• Your dataset is small, and you want to use transfer learning.
@@ -40,6 +44,8 @@ Each gesture is recorded as a video sequence of 30 frames (images), which are st
 	• Instead of training a CNN from scratch, use a pretrained CNN for feature extraction.
 	• LSTM handles the sequential dependencies.
 	• Reduces training time and improves performance with limited data.
+
+ 
 4️⃣ Transformers (TimeSformer, Video Swin Transformer, etc.)
 ✅ Best if:
 	• You have a very large dataset and high computational power (GPUs/TPUs).
@@ -63,13 +69,19 @@ Each gesture is recorded as a video sequence of 30 frames (images), which are st
  
 #Model Performance Comparison
 	Model	Accuracy	Speed	Data Requirement	Compute Requirement
+ 
 	CNN + LSTM	⭐⭐⭐ (Good)	🏃‍♂️ Fast	🟢 Works well with medium data	🟢 Runs on CPU/GPU
+ 
 	3D CNN	⭐⭐⭐⭐ (Better)	🐢 Slow	🔴 Needs large dataset	🔴 Requires GPU
+ 
 	Pretrained CNN + LSTM	⭐⭐⭐⭐ (Better)	🏃‍♂️ Fast	🟢 Works well with small data	🟢 Efficient on CPU/GPU
+
+
 	Transformers (TimeSformer, Video Swin)	⭐⭐⭐⭐⭐ (Best)	🐢 Slow	🔴 Needs a very large dataset	🔴 Requires multiple GPUs/TPUs
  
 #Best Choice for Your Use Case (Smart TV Gesture Recognition)
 	Since gesture videos are short (30 frames), and the dataset is a few hundred videos, the best tradeoff between performance and feasibility is:
+ 
 	✅ Pretrained CNN + LSTM
 		• Extracts spatial features using a pretrained CNN (e.g., ResNet, MobileNet, or InceptionV3)
 		• Uses LSTM to learn the temporal dependencies
