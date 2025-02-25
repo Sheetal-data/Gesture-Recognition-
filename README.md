@@ -14,6 +14,7 @@ Each gesture is recorded as a video sequence of 30 frames (images), which are st
 
 
 1️⃣ CNN + LSTM Model
+
 ✅ Best if:
 	• You want a simple yet effective model for video classification.
 	• Your dataset is relatively small.
